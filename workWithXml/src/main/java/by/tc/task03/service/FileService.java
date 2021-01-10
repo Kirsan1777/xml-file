@@ -7,25 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileService {
-    public List<String> readFileAll() throws IOException {
-        List<String> listWithAllAppliance = new ArrayList<>();
-        FileReader fileReader = new FileReader("C:\\Users\\Nikita\\Desktop\\temp.txt");
+    public List<String> readXmlFile() throws IOException {
+        List<String> listWithAllSubjects = new ArrayList<>();
 
-        try
-        {
+        FileReader fileReader = new FileReader("D:\\Java\\workWithXml\\src\\main\\resources\\test.xml");
+        try {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String s;
-            while((s=bufferedReader.readLine())!=null){
-                listWithAllAppliance.add(s);
+            while ((s = bufferedReader.readLine()) != null) {
+                listWithAllSubjects.add(s);
             }
             bufferedReader.close();
-        }
-        catch(IOException ex){
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
 
         }
 
-        return listWithAllAppliance;
+        return listWithAllSubjects;
     }
 
 }
